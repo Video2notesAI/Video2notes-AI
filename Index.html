@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video2Notes AI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #5b5ce2;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 65px 20px 35px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #5b5ce2;
+    }
+
+    .hero p {
+      color: #667085;
+      font-size: 17px;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .box {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d8dce5;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #5b5ce2;
+    }
+
+    .options {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    select {
+      flex: 1;
+      min-width: 180px;
+      padding: 13px;
+      border: 1px solid #d8dce5;
+      border-radius: 10px;
+      background: white;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #5b5ce2;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4849c9;
+    }
+
+    .features {
+      max-width: 1000px;
+      margin: 45px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .feature h3 {
+      margin: 12px 0 8px;
+    }
+
+    .feature p {
+      color: #667085;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    @media(max-width: 700px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Video2<span>Notes AI</span></div>
+</header>
+
+<section class="hero">
+  <h1>Turn Videos Into <span>Smart Notes</span></h1>
+  <p>
+    Paste a YouTube video link and create clear, organized study notes
+    in Hindi or English.
+  </p>
+</section>
+
+<div class="box">
+
+  <label for="videoUrl">YouTube Video Link</label>
+
+  <input
+    type="url"
+    id="videoUrl"
+    placeholder="Paste YouTube video link here..."
+  >
+
+  <div class="options">
+
+    <select id="language">
+      <option value="Hindi">Hindi Notes</option>
+      <option value="English">English Notes</option>
+    </select>
+
+    <select id="noteType">
+      <option value="short">Short Notes</option>
+      <option value="detailed">Detailed Notes</option>
+      <option value="exam">Exam Notes</option>
+    </select>
+
+  </div>
+
+  <button onclick="generateNotes()">
+    ✨ Generate Notes
+  </button>
+
+</div>
+
+<section class="features">
+
+  <div class="feature">
+    <div style="font-size:32px;">🎥</div>
+    <h3>YouTube Video</h3>
+    <p>Paste your video link and prepare it for note generation.</p>
+  </div>
+
+  <div class="feature">
+    <div style="font-size:32px;">🤖</div>
+    <h3>AI Notes</h3>
+    <p>Convert video content into organized and easy-to-read notes.</p>
+  </div>
+
+  <div class="feature">
+    <div style="font-size:32px;">📚</div>
+    <h3>Study Ready</h3>
+    <p>Create Hindi or English notes suitable for revision and study.</p>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Video2Notes AI
+</footer>
+
+<script>
+  function generateNotes() {
+
+    const url = document.getElementById("videoUrl").value.trim();
+
+    if (!url) {
+      alert("Please paste a YouTube video link first.");
+      return;
+    }
+
+    alert(
+      "Great! Your video link has been received. AI note generation will be connected in the next step."
+    );
+  }
+</script>
+
+</body>
+</html>
